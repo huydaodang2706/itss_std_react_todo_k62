@@ -7,6 +7,9 @@
 function Filter(  ) {
   return (
     <div className="panel-tabs">
+      <div>全て</div>
+      <div>未完了</div>
+      <div>完了済み</div>
     </div>
   );
 }
