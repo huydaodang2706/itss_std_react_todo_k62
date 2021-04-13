@@ -6,14 +6,15 @@ import React, { useState } from 'react';
 　・チェックボックスにチェックが入っているか管理する
 　・チェックボックスにチェックが入っているかアイテムをグレーアウトする
 */
-function TodoItem({item}) {
+function TodoItem({item,handleChecked}) {
   const [itemCss,setItemCss] = React.useState("");
-  const handleItem = () => setItemCss(itemCss== "" ? "has-text-grey-light" : "");
-  
+  const handleItem = (key) => {
+    handleChecked(item)
+  } 
   return (
     <label className="panel-block">
-      <input type="checkbox" onClick={handleItem}/>
-      <p className={itemCss}>{item.text}</p>
+      <input type="checkbox" onClick={handleItem} checked={item.done}/>
+      <p className= {item.done? 'has-text-grey-light' : ''}>{item.text}</p>
     </label>
   );
 }
