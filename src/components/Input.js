@@ -12,7 +12,7 @@ function Input( {onSubmit} ) {
   }
   return (
     <div className="panel-block">
-      <input class="input" type="text" onKeyDown={handleEnter}></input>
+      <input className="input" type="text" onKeyDown={handleEnter}></input>
     </div>
   );
 }

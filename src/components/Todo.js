@@ -27,6 +27,7 @@ function Todo() {
   //   /* テストコード 終了 */
   // ]);
   const [items, putItems, clearItems] = useStorage();
+
   const [filter, setFilter] = React.useState('ALL');
 
   const displayItems = items.filter(item => {
@@ -37,7 +38,7 @@ function Todo() {
   });
 
   const handleEnter=(e) => {
-    putItems(items => [
+    putItems( [
       ...items,
       {key:getKey(), text:e.target.value, done:false}
     ])
