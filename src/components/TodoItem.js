@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /* 
   【TodoItemコンポーネント】
@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 　・チェックボックスにチェックが入っているかアイテムをグレーアウトする
 */
 function TodoItem({item,handleChecked}) {
-  const [itemCss,setItemCss] = React.useState("");
+  // const [itemCss,setItemCss] = React.useState("");
   const handleItem = (key) => {
     handleChecked(item)
   } 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /* 
   【Todoのデータ構成】
@@ -33,6 +33,7 @@ function Todo() {
     if (filter === 'ALL') return true;
     if (filter === 'TODO') return !item.done;
     if (filter === 'DONE') return item.done;
+    return null;
   });
 
   const handleEnter=(e) => {
