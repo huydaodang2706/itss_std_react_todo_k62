@@ -13,8 +13,8 @@ import Input from './Input';
 import Filter from './Filter';
 
 /* カスタムフック */
-import useStorage from '../hooks/storage';
-
+// import useStorage from '../hooks/storage';
+import useFbStorage from '../hooks/fbStorage';
 /* ライブラリ */
 import {getKey} from "../lib/util";
 
@@ -26,7 +26,8 @@ function Todo() {
   //   { key: getKey(), text: '明日の準備をする', done: false },
   //   /* テストコード 終了 */
   // ]);
-  const [items, putItems, clearItems] = useStorage();
+  // const [items, putItems, clearItems] = useStorage();
+  const [items, addItem, updateItem, clearItems] = useFbStorage();
 
   const [filter, setFilter] = React.useState('ALL');
 
@@ -38,20 +39,22 @@ function Todo() {
   });
 
   const handleEnter=(e) => {
-    putItems( [
-      ...items,
-      {key:getKey(), text:e.target.value, done:false}
-    ])
+    // putItems( [
+    //   ...items,
+    //   {key:getKey(), text:e.target.value, done:false}
+    // ])
+    addItem({text:e.target.value, done: false });
   }
 
   const handleChecked = (checked) => {
-    const newItems = items.map(item => {
-      if (item.key === checked.key) {
-        item.done = !item.done;
-      }
-      return item;
-    });
-    putItems(newItems);
+    // const newItems = items.map(item => {
+    //   if (item.key === checked.key) {
+    //     item.done = !item.done;
+    //   }
+    //   return item;
+    // });
+    // putItems(newItems);
+    updateItem(checked);
   };
 
   const handleFilterChange = (value) =>{
