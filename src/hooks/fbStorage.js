@@ -36,6 +36,7 @@ function useFbStorage() {
   const clearItems = () => {
     items.map(item => {
       clearFirebaseItem(item);
+      return item;
     })
     setItems([]);
   };
