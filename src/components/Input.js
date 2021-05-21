@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 /* 
   【inputコンポーネント】
 　・新しいTodoを作成するINPUTフィールドを作成するコンポーネント
@@ -12,7 +12,7 @@ function Input( {onSubmit} ) {
   }
   return (
     <div className="panel-block">
-      <input class="input" type="text" onKeyDown={handleEnter}></input>
+      <input className="input" type="text" onKeyDown={handleEnter}></input>
     </div>
   );
 }
